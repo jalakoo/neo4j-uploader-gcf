@@ -255,16 +255,14 @@ pyarrow = ["pyarrow (>=1.0.0)"]
 
 [[package]]
 name = "neo4j-uploader"
-version = "0.2.0"
+version = "0.3.0"
 description = ""
 optional = false
-python-versions = "^3.11"
-files = []
-develop = true
-
-[package.source]
-type = "directory"
-url = "../neo4j-uploader"
+python-versions = ">=3.11,<4.0"
+files = [
+    {file = "neo4j_uploader-0.3.0-py3-none-any.whl", hash = "sha256:34519d45e7c399068e5efcfb4eda0f6a26553f5f64b3a7bbb1958531caed830c"},
+    {file = "neo4j_uploader-0.3.0.tar.gz", hash = "sha256:d9fa641d82f24917ccfb03685b30eb64b20d3f5959a2a57ba48c3d851649acf6"},
+]
 
 [[package]]
 name = "packaging"
@@ -511,4 +509,4 @@ watchdog = ["watchdog (>=2.3)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "8987de1e814da5aa41296ca45aca04843ee374d0c4a430401f4714f557d8dc78"
+content-hash = "c946e06c4e763c96738edbea13093d7f982607fcf1368cf4984ffb39a4da9e47"
