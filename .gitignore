@@ -1,0 +1,7 @@
+.DS_Store
+.pytest_cache
+.vscode
+dist
+REFERENCES.md
+**/__pycache__
+__pycache__/
