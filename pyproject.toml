@@ -9,9 +9,9 @@ packages = [{include = "neo4j_uploader_gcf"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 pydantic = "^2.4.2"
-neo4j-uploader = {path = "/Users/jasonkoo/neo4j/repos/neo4j-uploader", develop = true}
 functions-framework = "^3.4.0"
 neo4j = "^5.14.1"
+neo4j-uploader = "^0.4.0"
 
 
 [build-system]
