@@ -7,8 +7,18 @@ Run a function: `poetry run functions-framework --target=gcf_upload`
 ## Notes
 Time to process:
 
-200 Nodes
-300 relationships
-1300 properties
+neo4j_uploader v0.4.0
+- 100 Nodes
+- 100 relationships
+- 1000 properties
+Should take about 6 seconds to upload
 
-Currently takes about 15 seconds to process
+- 500 Nodes
+- 500 relationships
+- 10000 properties
+Should take about 6-8 seconds to upload
+
+- 1000 Nodes
+- 1000 Relationships
+- 10000 Properties
+Takes about 10 seconds
