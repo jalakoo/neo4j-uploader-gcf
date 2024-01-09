@@ -9,8 +9,7 @@ packages = [{include = "neo4j_uploader_gcf"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 functions-framework = "^3.4.0"
-neo4j-uploader = "^0.5.1"
-poetry-dotenv-plugin = "^0.2.0"
+neo4j-uploader = "^0.5.2"
 
 
 [build-system]
