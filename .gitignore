@@ -1,6 +1,7 @@
 .DS_Store
 .pytest_cache
 .vscode
+.env
 dist
 REFERENCES.md
 **/__pycache__
