@@ -4,13 +4,6 @@ Simple GCF Function for taking JSON payload data and uploading it to a Neo4j Gra
 ## Running Locally
 Run a function: `poetry run functions-framework --target=json_to_neo4j`
 
-```
-NEO4J_URI=<uri> \
-NEO4J_USERNAME=<username> \
-NEO4J_PASSWORD=<password> \
-poetry run functions-framework --target=json_to_neo4j
-```
-
 Default port is 8080
 To adjust add `--port=<port_number>`
 
@@ -26,56 +19,4 @@ Can reference this repo by adding it to your [Google Cloud Source Repository](ht
 Tested working as a 1st gen function.
 
 ## JSON Payload Schema
-```
-# Example
-{
-    "nodes": [
-        {
-            "labels":["Person"],
-            "key":"uid",
-            "records":[
-                {
-                    "uid":"abc",
-                    "name": "John Wick"
-                },
-                {
-                    "uid":"bcd",
-                    "name":"Cane"
-                }
-            ]
-        },
-        {
-            "labels":["Dog"],
-            "key": "gid",
-            "records":[
-                {
-                    "gid":"abc",
-                    "name": "Daisy"
-                }
-            ]
-        }
-    ],
-    "relationships": [
-        {
-            "type":"loves",
-            "from_node": {
-                "record_key":"_from_uid",
-                "node_key":"uid",
-                "node_label":"Person"
-            },
-            "to_node": {
-                "record_key":"_to_gid",
-                "node_key":"gid",
-                "node_label": "Dog"
-            },
-            "exclude_keys":["_from_uid", "_to_gid"],
-            "records":[
-                {
-                    "_from_uid":"abc",
-                    "_to_gid":"abc"
-                }
-            ]
-        }
-    ]
-}
-```
+See the sample.json file

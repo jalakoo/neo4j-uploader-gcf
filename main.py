@@ -1,24 +1,33 @@
 import functions_framework
 from neo4j_uploader import batch_upload, InvalidPayloadError
 import os
+import logging
+
+
+@functions_framework.http
+def test(request):
+    return f'Hello World!', 200
 
 @functions_framework.http
 def json_to_neo4j(request):
 
-    # Validate config information is available
-    uri = os.environ.get('NEO4J_URI', None)
-    user = os.environ.get('NEO4J_USERNAME', None)
-    password = os.environ.get('NEO4J_PASSWORD', None)
+    logging.info(f'Request received: {request}')
+
+    json = request.get_json()
+
+    config = json.get('config', None)
+    if config is None:
+        return f'JSON payload missing or malformed. Neo4j config is required', 400
+    
+    data = json.get('data', None)
+    if data is None:
+        return f'JSON payload missing or malformed. Nodes and Relationship data is required', 400
     
     # Forward the request to the neo4j-uploader
     try:
         upload_result = batch_upload(
-            config = {
-                'neo4j_uri': uri,
-                'neo4j_user': user,
-                'neo4j_password': password
-            },
-            data = request.get_json(silent=True),
+            config = config,
+            data = data,
             )
         return upload_result.model_dump(), 200, {"Content-Type": "application/json"}
     except InvalidPayloadError as e:
