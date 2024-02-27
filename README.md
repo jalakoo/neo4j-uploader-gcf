@@ -16,8 +16,8 @@ Optionally enable basic auth by adding in `BASIC_AUTH_USER` and `BASIC_AUTH_PASS
 NEO4J_URI=<uri> \
 NEO4J_USERNAME=<username> \
 NEO4J_PASSWORD=<password> \
-BASIC_AUTH_USER=<username> \
-BASIC_AUTH_PASSWORD=<password> \
+BASIC_AUTH_USER=<auth_username> \
+BASIC_AUTH_PASSWORD=<auth_password> \
 poetry run functions-framework --target=json_to_neo4j
 ```
 
