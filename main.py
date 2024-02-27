@@ -1,5 +1,6 @@
-import functions_framework
+from basicauth import decode
 from neo4j_uploader import batch_upload, InvalidPayloadError
+import functions_framework
 import os
 
 @functions_framework.http
@@ -9,6 +10,17 @@ def json_to_neo4j(request):
     uri = os.environ.get('NEO4J_URI', None)
     user = os.environ.get('NEO4J_USERNAME', None)
     password = os.environ.get('NEO4J_PASSWORD', None)
+
+    # Optional Basic Auth
+    basic_user = os.environ.get('BASIC_AUTH_USER', None)
+    basic_password = os.environ.get('BASIC_AUTH_PASSWORD', None)
+    if basic_user and basic_password:
+        auth_header = request.headers.get('Authorization')
+        if auth_header is None:
+            return 'Missing authorization credentials', 401
+        request_username, request_password = decode(auth_header)
+        if request_username != basic_user or request_password != basic_password:
+            return 'Unauthorized', 401
     
     # Forward the request to the neo4j-uploader
     try:

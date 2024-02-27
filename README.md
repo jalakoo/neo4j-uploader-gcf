@@ -11,8 +11,18 @@ NEO4J_PASSWORD=<password> \
 poetry run functions-framework --target=json_to_neo4j
 ```
 
+Optionally enable basic auth by adding in `BASIC_AUTH_USER` and `BASIC_AUTH_PASSWORD` to the env vars:
+```
+NEO4J_URI=<uri> \
+NEO4J_USERNAME=<username> \
+NEO4J_PASSWORD=<password> \
+BASIC_AUTH_USER=<username> \
+BASIC_AUTH_PASSWORD=<password> \
+poetry run functions-framework --target=json_to_neo4j
+```
+
 Default port is 8080
-To adjust add `--port=<port_number>`
+To adjust add `--port=<port_number>` to the above
 
 ## Testing Locally
 Curl can be used to test the function locally. From this root project folder:
