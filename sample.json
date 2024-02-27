@@ -3,6 +3,7 @@
         {
             "labels":["Person"],
             "key":"uid",
+            "dedupe": true,
             "records":[
                 {
                     "uid":"abc",
@@ -17,6 +18,7 @@
         {
             "labels":["Dog"],
             "key": "gid",
+            "dedupe": true,
             "records":[
                 {
                     "gid":"abc",
@@ -38,6 +40,7 @@
                 "node_key":"gid",
                 "node_label": "Dog"
             },
+            "dedupe": true,
             "exclude_keys":["_from_uid", "_to_gid"],
             "records":[
                 {
