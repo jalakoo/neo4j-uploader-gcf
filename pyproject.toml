@@ -1,15 +1,15 @@
 [tool.poetry]
 name = "neo4j-uploader-gcf"
-version = "0.2.1"
-description = ""
-authors = ["Jason Koo <jalakoo@gmail.com>"]
+version = "0.3.0"
+description = "Google Cloud Function wrapper for the neo4j_uploader python package"
+authors = ["jalakoo <jalakoo@gmail.com>"]
 readme = "README.md"
-packages = [{include = "neo4j_uploader_gcf"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
-functions-framework = "^3.4.0"
-neo4j-uploader = "^0.5.2"
+python = "^3.9"
+functions-framework = "^3.5.0"
+neo4j-uploader = "^0.5.3"
+basicauth = "^1.0.0"
 
 
 [build-system]
